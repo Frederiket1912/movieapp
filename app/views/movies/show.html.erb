@@ -3,10 +3,12 @@
 <p>Year: <%= @movie.release_year %></p>
 <p>Genre: <%= @movie.genre %></p>
 <p>Runtime: <%= @movie.runtime %></p>
-<%if @movie.comment?%>
+<%if @movie.comment.present?%>
   <p>My comment: <%= @movie.comment%></p>
 <%end%>
-<img src=<%= @movie.img_url %>>
+<% if @movie.img_url.present? %>
+  <img src="<%= @movie.img_url %>">
+<% end %>
 
 <ul>
   <li><%= link_to "Comment on Movie", edit_movie_path(@movie) %></li>

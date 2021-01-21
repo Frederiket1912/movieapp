@@ -3,7 +3,6 @@
 one:
   title: MyString
   release_year: MyString
-  img_url: MyString
   genre: MyText
   runtime: MyString
   comment: MyText
@@ -11,7 +10,6 @@ one:
 two:
   title: Movie2
   release_year: Movie2
-  img_url: Movie2
   genre: Movie2
   runtime: Movie2
   comment: Movie2

@@ -36,7 +36,8 @@ class MoviesTest < ApplicationSystemTestCase
   end
 
   test "delete fixture movie" do
-    visit movie_path(980190962)
+    movie = movies(:one)
+    visit movie_path movie
     accept_confirm do
       click_on "Remove Movie"
     end
@@ -55,5 +56,14 @@ class MoviesTest < ApplicationSystemTestCase
     end
 
     assert_no_text "Titanic"
+  end
+
+  test "search for movie with wrong name" do
+    visit movies_path
+    click_on "New Movie"
+    fill_in "title", with: "Titaniccc"
+    click_on "Search"
+    
+    assert_text "Movie not found"
   end
 end
