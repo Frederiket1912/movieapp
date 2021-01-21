@@ -1,0 +1,18 @@
+
+
+<%= form_with model: @movie do |form| %>
+    <div>
+    <br>
+    <br>
+        <%= form.label :comment %><br>
+        <%= form.text_area :comment %><br>
+    </div>
+
+    <div>
+        <%= form.submit "Update Comment" %>
+    </div>
+<% end %>
+
+<%= link_to "Cancel", @movie %>
+
+

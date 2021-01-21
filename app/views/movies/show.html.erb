@@ -1,0 +1,18 @@
+<h1><%= @movie.title %></h1>
+
+<p>Year: <%= @movie.release_year %></p>
+<p>Genre: <%= @movie.genre %></p>
+<p>Runtime: <%= @movie.runtime %></p>
+<%if @movie.comment?%>
+  <p>My comment: <%= @movie.comment%></p>
+<%end%>
+<img src=<%= @movie.img_url %>>
+
+<ul>
+  <li><%= link_to "Comment on Movie", edit_movie_path(@movie) %></li>
+  <li><%= link_to "Remove Movie", movie_path(@movie),
+                  method: :delete,
+                  data: { confirm: "Are you sure?" } %></li>
+  <li><%= link_to "Back to index", root_path %></li>
+</ul>
+
